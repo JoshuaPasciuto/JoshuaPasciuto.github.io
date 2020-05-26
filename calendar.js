@@ -406,7 +406,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   //builds calendar
   $("#calendar").each(function () {
+    console.log("pre-render");
     calendar.render();
+    console.log("post-render");
   });
 
   var $element = $(".fc-time-grid-event");
