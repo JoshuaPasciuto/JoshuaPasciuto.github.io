@@ -517,7 +517,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var dinnerSubscribed = 0;
   var open1Subscribed = 0;
   var open2Subscribed = 0;
-  var bedtimePrepSubscribed = 0;
   var bedtimeSubscribed = 0;
   var custom1Subscribed = 0;
   var custom2Subscribed = 0;
