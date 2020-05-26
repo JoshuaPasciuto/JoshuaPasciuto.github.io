@@ -1,4 +1,3 @@
-//removes event from calendar
 Array.prototype.remove = function () {
   var what,
     a = arguments,
