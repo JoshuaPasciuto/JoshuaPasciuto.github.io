@@ -52,7 +52,7 @@ function addZero(n) {
   return n;
 }
 
-const checkOrder = (id) => {
+var checkOrder = (id) => {
   if (
     id.innerHTML.search(" 2") != -1 &&
     $(id).prev().hasClass("disabled") == false
@@ -74,12 +74,12 @@ function getOccurrence(array, value) {
 }
 
 //removes event from calendar
-const removeEvent = (event) => {
+var removeEvent = (event) => {
   event.remove();
 };
 
 //converts 12am/pm to 24 hour time
-const convertTime12to24 = (time12h) => {
+var convertTime12to24 = (time12h) => {
   const [time, modifier] = time12h.split(" ");
 
   let [hours, minutes] = time.split(":");
