@@ -413,6 +413,14 @@ h2 {
 }
 
 /*Loading animation*/
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
 .loader {
   text-align: center;
   display: flex 1 1 auto;
@@ -424,7 +432,7 @@ h2 {
   vertical-align: middle;
   width: 10px;
   height: 10px;
-  margin: 50px auto;
+  margin: 40% auto;
   background: black;
   border-radius: 50px;
   -webkit-animation: loader 0.9s infinite alternate;
