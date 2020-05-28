@@ -651,5 +651,6 @@ setTimeout(function () {
   console.log("Number of calendars: " + $(".fc-view-container").length);
   if ($(".fc-view-container").length > 1) {
     $(".fc-view-container:nth-child(2)").remove();
+    $(".fc-toolbard:nth-child(2)").remove();
   }
 }, 1100);

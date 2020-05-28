@@ -470,7 +470,7 @@ h2 {
 }
 
 .disabled {
-  display: none;
+  display: none !important;
 }
 
 #overlay {
