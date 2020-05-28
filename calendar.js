@@ -639,11 +639,11 @@ setTimeout(function () {
       }
     }, 15);
   };
-}, 75);
+}, 100);
 
 setTimeout(function () {
   console.log("Number of calendars: " + $(".fc-view-container").length);
   if ($(".fc-view-container").length > 1) {
     $(".fc-view-container:nth-child(2)").remove();
   }
-}, 200);
+}, 250);
