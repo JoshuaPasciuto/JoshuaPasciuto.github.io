@@ -299,6 +299,10 @@ input:focus {
 }
 
 /** Structure */
+body {
+  font-family: lato;
+}
+
 #q_id {
   max-width: 80%;
   margin: 0 auto;
