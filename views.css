@@ -304,12 +304,10 @@ h2 {
 }
 .grid-item:first-child {
   height: 97%;
-  overflow-y: scroll;
 }
 
 .grid-item:nth-child(2) {
   height: 97%;
-  overflow-y: scroll;
 }
 
 .event-grid {
