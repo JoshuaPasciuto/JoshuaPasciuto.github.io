@@ -301,17 +301,16 @@ input:focus {
 /** Structure */
 body {
   font-family: lato;
+  background: url(https://rgsip1storage.blob.core.windows.net/imagecontainer/dev/images/1/e81813b8d50eec989adf029c599cf6ff.jpeg)
+    no-repeat center center fixed;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 #q_id {
   max-width: 80%;
   margin: 0 auto;
   padding: 0;
-  font-family: Lato;
-  font-weight: normal;
-  font-size: 14px;
-  background: url(https://rgsip1storage.blob.core.windows.net/imagecontainer/dev/images/1/e81813b8d50eec989adf029c599cf6ff.jpeg)
-    no-repeat center center fixed;
   background-size: cover;
 }
 
