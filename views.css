@@ -49,10 +49,12 @@
 /* RIGHT column - Custom calendar */
 #calendar-container {
   border-radius: 2px;
+  height: 97%;
 }
 
 #calendar {
   background-color: none;
+  height: 97%;
 }
 
 .fc-scroller {
