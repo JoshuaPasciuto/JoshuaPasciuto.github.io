@@ -415,6 +415,7 @@ h2 {
 /*Loading animation*/
 .loader {
   text-align: center;
+  display: flex 1 1 auto;
   opacity: 100%;
   z-index: 1000;
 }
