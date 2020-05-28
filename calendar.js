@@ -531,7 +531,7 @@ setTimeout(function () {
 
   console.log("length test");
 
-  $(".fc-view-container").remove().nth - child(2),
+  $(".fc-view-container:nth-child(2)").remove(),
     //submit function
     (button.onclick = function () {
       console.log("submit pressed");
