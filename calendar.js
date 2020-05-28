@@ -535,11 +535,6 @@ setTimeout(function () {
   console.log(i);
   $(".fc-view-container").each(function () {
     calendarCount = calendarCount + 1;
-    if (calendarCount == 1) {
-      console.log("Doing nothing");
-    } else if (calendarCount == 2) {
-      ("needs to remove");
-    }
   });
   //submit function
   button.onclick = function () {
@@ -644,8 +639,11 @@ setTimeout(function () {
       }
     }, 15);
   };
-}, 420);
+}, 100);
 
 setTimeout(function () {
-  $(".fc-view-container:nth-child(2)").remove();
-}, 2000);
+  console.log("Number of calendars: " + $(".fc-view-container").length);
+  if ($(".fc-view-container").length > 1) {
+    $(".fc-view-container:nth-child(2)").remove();
+  }
+}, 250);
