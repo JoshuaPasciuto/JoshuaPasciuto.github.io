@@ -534,7 +534,7 @@ setTimeout(function () {
   var calendarCount = 0;
   console.log(i);
   $(".fc-view-container").each(function () {
-    calendarCount++;
+    calendarCount = calendarCount + 1;
     if (calendarCount == 1) {
       console.log("Doing nothing");
     } else if (calendarCount == 2) {
@@ -647,5 +647,5 @@ setTimeout(function () {
 }, 420);
 
 setTimeout(function () {
-  $(".fc-view-container").last().remove();
+  $(".fc-view-container:nth-child(2)").remove();
 }, 2000);
