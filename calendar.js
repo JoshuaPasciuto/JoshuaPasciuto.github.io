@@ -541,108 +541,111 @@ setTimeout(function () {
       ("needs to remove");
     }
   });
-  $(".fc-view-container").last().remove(),
-    //submit function
-    (button.onclick = function () {
-      console.log("submit pressed");
+  //submit function
+  button.onclick = function () {
+    console.log("submit pressed");
 
-      console.log("Variable Layout");
-      console.log("Event: (subscribed) (time in Unix)");
+    console.log("Variable Layout");
+    console.log("Event: (subscribed) (time in Unix)");
 
-      var countOcc = 0;
-      var customFormHTML =
-        '<div id="customForm" class="custom1"><h3>Custom Event 1</h3><div id="close" class="popupCloseButton">&times;</div><input type="text" id="eventTitle1" name="title" placeholder="Title"><br><br><input type="text" id="description1" name="description" placeholder="Description"><br><hr><br></div>';
-      var buttonHTML =
-        '<button id="submitCustomEvents" class="update1">Update Custom Event</button>';
-      var custom2HTML =
-        '<h3>Custom Event 2</h3><input type="text" id="eventTitle2" name="title" placeholder="Title"><br><br><input type="text" id="description2" name="description" placeholder="Description"><br><hr><br>';
-      var custom3HTML =
-        '<h3>Custom Event 3</h3><input type="text" id="eventTitle3" name="title" placeholder="Title"><br><br><input type="text" id="description3" name="description" placeholder="Description"><br><hr><br>';
+    var countOcc = 0;
+    var customFormHTML =
+      '<div id="customForm" class="custom1"><h3>Custom Event 1</h3><div id="close" class="popupCloseButton">&times;</div><input type="text" id="eventTitle1" name="title" placeholder="Title"><br><br><input type="text" id="description1" name="description" placeholder="Description"><br><hr><br></div>';
+    var buttonHTML =
+      '<button id="submitCustomEvents" class="update1">Update Custom Event</button>';
+    var custom2HTML =
+      '<h3>Custom Event 2</h3><input type="text" id="eventTitle2" name="title" placeholder="Title"><br><br><input type="text" id="description2" name="description" placeholder="Description"><br><hr><br>';
+    var custom3HTML =
+      '<h3>Custom Event 3</h3><input type="text" id="eventTitle3" name="title" placeholder="Title"><br><br><input type="text" id="description3" name="description" placeholder="Description"><br><hr><br>';
 
-      events = [];
-      startTime = [];
+    events = [];
+    startTime = [];
 
-      $(".fc-title").each(function () {
-        events.push($(this).text());
-      });
+    $(".fc-title").each(function () {
+      events.push($(this).text());
+    });
 
-      $("div.fc-time").each(function () {
-        var tempTime = convertTime12to24(
-          $(this).attr("data-full").substring(0, 8).split(" ").join(" ")
-        );
-        var tempUnix = Date.parse("01 Jan 1970 " + tempTime + ":00 GMT");
-        startTime.push(tempUnix);
-      });
+    $("div.fc-time").each(function () {
+      var tempTime = convertTime12to24(
+        $(this).attr("data-full").substring(0, 8).split(" ").join(" ")
+      );
+      var tempUnix = Date.parse("01 Jan 1970 " + tempTime + ":00 GMT");
+      startTime.push(tempUnix);
+    });
 
-      for (let i = 1; i < 4; i++) {
-        var tempIncludesBoolean;
-        if (getOccurrence(events, "Custom " + i) > 0) {
-          countOcc = countOcc + 1;
-        }
+    for (let i = 1; i < 4; i++) {
+      var tempIncludesBoolean;
+      if (getOccurrence(events, "Custom " + i) > 0) {
+        countOcc = countOcc + 1;
       }
+    }
 
-      setTimeout(function () {
-        if (countOcc >= 1) {
-          $(".hover_bkgr_fricc1").show();
-          $("#customForm").replaceWith(customFormHTML);
-          $(".custom1").show();
-          if (countOcc >= 2) {
-            $("#customForm").append(custom2HTML);
-            if (countOcc >= 3) {
-              $("#customForm").append(custom3HTML);
-            }
+    setTimeout(function () {
+      if (countOcc >= 1) {
+        $(".hover_bkgr_fricc1").show();
+        $("#customForm").replaceWith(customFormHTML);
+        $(".custom1").show();
+        if (countOcc >= 2) {
+          $("#customForm").append(custom2HTML);
+          if (countOcc >= 3) {
+            $("#customForm").append(custom3HTML);
           }
         }
-        $("#customForm").append(buttonHTML);
+      }
+      $("#customForm").append(buttonHTML);
 
-        $("#close").click(function () {
-          $("#hover_bkgr_fricc").hide();
-          $("#customForm").hide();
-        });
+      $("#close").click(function () {
+        $("#hover_bkgr_fricc").hide();
+        $("#customForm").hide();
+      });
 
-        $("#submitCustomEvents").click(function () {
-          if (countOcc >= 1) {
+      $("#submitCustomEvents").click(function () {
+        if (countOcc >= 1) {
+          if (
+            ($("#eventTitle1").val() == "") &
+            ($("#description1").val() == "")
+          ) {
+            alert("Please fill out all fields below");
+            return;
+          }
+          custom1Title = $("#eventTitle1").val();
+          custom1Desc = $("#description1").val();
+          console.log("Custom 1 Title: " + custom1Title);
+          console.log("Custom 1 Desc: " + custom1Desc);
+          if (countOcc >= 2) {
             if (
-              ($("#eventTitle1").val() == "") &
-              ($("#description1").val() == "")
+              ($("#eventTitle2").val() == "") &
+              ($("#description2").val() == "")
             ) {
               alert("Please fill out all fields below");
               return;
             }
-            custom1Title = $("#eventTitle1").val();
-            custom1Desc = $("#description1").val();
-            console.log("Custom 1 Title: " + custom1Title);
-            console.log("Custom 1 Desc: " + custom1Desc);
-            if (countOcc >= 2) {
-              if (
-                ($("#eventTitle2").val() == "") &
-                ($("#description2").val() == "")
-              ) {
-                alert("Please fill out all fields below");
-                return;
-              }
-              custom2Title = $("#eventTitle2").val();
-              custom2Desc = $("#description2").val();
-              console.log("Custom 2 Title: " + custom2Title);
-              console.log("Custom 2 Desc: " + custom2Desc);
-            }
+            custom2Title = $("#eventTitle2").val();
+            custom2Desc = $("#description2").val();
+            console.log("Custom 2 Title: " + custom2Title);
+            console.log("Custom 2 Desc: " + custom2Desc);
           }
-
-          setTimeout(function () {
-            if (countOcc >= 1) {
-              setAll(events, startTime);
-              sendSchedule();
-              alert("Schedule sucessfully set for " + child);
-            }
-          }, 15);
-        });
-      }, 50);
-      setTimeout(function () {
-        if (countOcc == 0) {
-          setAll(events, startTime);
-          sendSchedule();
-          alert("Schedule sucessfully set for " + child);
         }
-      }, 15);
-    });
-}, 150);
+
+        setTimeout(function () {
+          if (countOcc >= 1) {
+            setAll(events, startTime);
+            sendSchedule();
+            alert("Schedule sucessfully set for " + child);
+          }
+        }, 15);
+      });
+    }, 50);
+    setTimeout(function () {
+      if (countOcc == 0) {
+        setAll(events, startTime);
+        sendSchedule();
+        alert("Schedule sucessfully set for " + child);
+      }
+    }, 15);
+  };
+}, 420);
+
+setTimeout(function () {
+  $(".fc-view-container").last().remove();
+}, 2000);
