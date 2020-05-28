@@ -23,8 +23,7 @@ function check(el) {
 
   if (!curOverf || curOverf === "visible") el.style.overflow = "hidden";
 
-  var isOverflowing =
-    el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
+  var isOverflowing = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
 
   el.style.overflow = curOverf;
 
@@ -59,16 +58,10 @@ function addZero(n) {
 }
 
 var checkOrder = (id) => {
-  if (
-    id.innerHTML.search(" 2") != -1 &&
-    $(id).prev().hasClass("disabled") == false
-  ) {
+  if (id.innerHTML.search(" 2") != -1 && $(id).prev().hasClass("disabled") == false) {
     console.log("contains 2");
     alert("Please select the first event for this actvity");
-  } else if (
-    id.innerHTML.search(" 3") != -1 &&
-    $(id).prev().hasClass("disabled") == false
-  ) {
+  } else if (id.innerHTML.search(" 3") != -1 && $(id).prev().hasClass("disabled") == false) {
     console.log("contains 3");
     alert("Please select the first event for this actvity");
   }
@@ -361,6 +354,27 @@ setTimeout(function () {
         return mom.format("LLL");
       }
     },
+    // Changes height of calendar based on viewport width
+    height: "parent",
+    contentHeight: 800,
+    windowResizeDelay: 100,
+    windowResize: function (view) {
+      var windowSize = screen.width;
+      var contentHeight = calendar.getOption("contentHeight");
+
+      console.log("Window resized");
+
+      if (windowSize >= 940) {
+        calendar.setOption("contentHeight", 800);
+        console.log("windowSize: " + windowSize + "\ncontentHeight: " + contentHeight);
+      } else if (windowSize < 940 && windowSize >= 640) {
+        calendar.setOption("contentHeight", 600);
+        console.log("windowSize: " + windowSize + "\ncontentHeight: " + contentHeight);
+      } else {
+        calendar.setOption("contentHeight", 400);
+        console.log("windowSize: " + windowSize + "\ncontentHeight: " + contentHeight);
+      }
+    },
     plugins: ["interaction", "dayGrid", "timeGrid"],
 
     longPressDelay: 250,
@@ -427,6 +441,24 @@ setTimeout(function () {
     setTimeout(checkForChanges, 500);
   }
 
+  // Sets calendar height based on viewport width
+  windowSize = screen.width;
+  contentHeight = calendar.getOption("contentHeight");
+
+  console.log("windowSize: " + windowSize);
+  console.log("contentHeight: " + contentHeight);
+
+  if (windowSize >= 940) {
+    calendar.setOption("contentHeight", 800);
+    console.log("windowSize: " + windowSize + "\ncontentHeight: " + contentHeight);
+  } else if (windowSize < 940 && windowSize >= 640) {
+    calendar.setOption("contentHeight", 600);
+    console.log("windowSize: " + windowSize + "\ncontentHeight: " + contentHeight);
+  } else {
+    calendar.setOption("contentHeight", 400);
+    console.log("windowSize: " + windowSize + "\ncontentHeight: " + contentHeight);
+  }
+
   $(".fc-axis").each(function () {
     if (this.innerText != "") {
       stringTime = this.innerText;
@@ -454,60 +486,24 @@ setTimeout(function () {
   var startTime = [];
 
   //start time
-  var wakeTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var breakfastTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var school1Time = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var school2Time = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var school3Time = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var lunchTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var snackTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var exercise1Time = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var choreTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var talkTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var dinnerTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var open1Time = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var open2Time = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var bedtimeTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var custom1Time = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var custom2Time = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var nonETime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
-  var eTime = Date.parse(
-    "01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT")
-  );
+  var wakeTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var breakfastTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var school1Time = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var school2Time = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var school3Time = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var lunchTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var snackTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var exercise1Time = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var choreTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var talkTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var dinnerTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var open1Time = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var open2Time = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var bedtimeTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var custom1Time = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var custom2Time = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var nonETime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
+  var eTime = Date.parse("01 Jan 1970 " + (convertTime12to24("12:01 AM") + ":00 GMT"));
 
   //subscribed
   var wakeSubscribed = 0;
@@ -552,8 +548,7 @@ setTimeout(function () {
     var countOcc = 0;
     var customFormHTML =
       '<div id="customForm" class="custom1"><h3>Custom Event 1</h3><div id="close" class="popupCloseButton">&times;</div><input type="text" id="eventTitle1" name="title" placeholder="Title"><br><br><input type="text" id="description1" name="description" placeholder="Description"><br><hr><br></div>';
-    var buttonHTML =
-      '<button id="submitCustomEvents" class="update1">Update Custom Event</button>';
+    var buttonHTML = '<button id="submitCustomEvents" class="update1">Update Custom Event</button>';
     var custom2HTML =
       '<h3>Custom Event 2</h3><input type="text" id="eventTitle2" name="title" placeholder="Title"><br><br><input type="text" id="description2" name="description" placeholder="Description"><br><hr><br>';
     var custom3HTML =
@@ -567,9 +562,7 @@ setTimeout(function () {
     });
 
     $("div.fc-time").each(function () {
-      var tempTime = convertTime12to24(
-        $(this).attr("data-full").substring(0, 8).split(" ").join(" ")
-      );
+      var tempTime = convertTime12to24($(this).attr("data-full").substring(0, 8).split(" ").join(" "));
       var tempUnix = Date.parse("01 Jan 1970 " + tempTime + ":00 GMT");
       startTime.push(tempUnix);
     });
@@ -602,10 +595,7 @@ setTimeout(function () {
 
       $("#submitCustomEvents").click(function () {
         if (countOcc >= 1) {
-          if (
-            ($("#eventTitle1").val() == "") &
-            ($("#description1").val() == "")
-          ) {
+          if (($("#eventTitle1").val() == "") & ($("#description1").val() == "")) {
             alert("Please fill out all fields below");
             return;
           }
@@ -614,10 +604,7 @@ setTimeout(function () {
           console.log("Custom 1 Title: " + custom1Title);
           console.log("Custom 1 Desc: " + custom1Desc);
           if (countOcc >= 2) {
-            if (
-              ($("#eventTitle2").val() == "") &
-              ($("#description2").val() == "")
-            ) {
+            if (($("#eventTitle2").val() == "") & ($("#description2").val() == "")) {
               alert("Please fill out all fields below");
               return;
             }
