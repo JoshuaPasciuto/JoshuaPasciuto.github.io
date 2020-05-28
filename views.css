@@ -469,7 +469,7 @@ h2 {
   }
 }
 
-.disabled {
+.loader .disabled {
   display: none !important;
 }
 
