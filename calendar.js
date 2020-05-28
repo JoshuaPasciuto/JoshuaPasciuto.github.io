@@ -1,7 +1,7 @@
 $(document).ready(function () {
   setTimeout(function () {
     $(".loader").addClass("disabled");
-  }, 5000);
+  }, 2200);
 });
 
 Array.prototype.remove = function () {
@@ -645,7 +645,7 @@ setTimeout(function () {
       }
     }, 15);
   };
-}, 500);
+}, 750);
 
 setTimeout(function () {
   console.log("Number of calendars: " + $(".fc-view-container").length);
@@ -653,4 +653,4 @@ setTimeout(function () {
     $(".fc-view-container:nth-child(2)").remove();
     $(".fc-toolbar:nth-child(2)").remove();
   }
-}, 1100);
+}, 1500);
