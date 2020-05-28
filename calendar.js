@@ -1,3 +1,9 @@
+$(document).ready(function () {
+  setTimeout(function () {
+    $(".loader").addClass("disabled");
+  }, 5000);
+});
+
 Array.prototype.remove = function () {
   var what,
     a = arguments,
