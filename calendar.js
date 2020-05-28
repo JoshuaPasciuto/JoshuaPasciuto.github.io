@@ -227,7 +227,7 @@ function setAll(array1, array2) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+setTimeout(function () {
   var eventPrefill = [];
   var startPrefill = [];
 
@@ -634,4 +634,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 15);
   };
-});
+}, 150);
