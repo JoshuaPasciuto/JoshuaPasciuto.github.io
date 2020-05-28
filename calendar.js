@@ -529,6 +529,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var custom1Desc = "";
   var custom2Desc = "";
 
+  console.log("length test");
+
   //submit function
   button.onclick = function () {
     console.log("submit pressed");
