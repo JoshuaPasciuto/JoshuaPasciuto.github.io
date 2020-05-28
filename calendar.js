@@ -266,8 +266,8 @@ setTimeout(function () {
     const queryString = window.location.search;
 
     const urlParams = new URLSearchParams(queryString);
-    var child = urlParams.get("phone");
-    var userId = urlParams.get("id");
+    var child = 407555555;
+    var userId = 1;
 
     function sendSchedule() {
       var settings = {
