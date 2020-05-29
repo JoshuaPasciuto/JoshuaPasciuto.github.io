@@ -387,13 +387,13 @@ setTimeout(function () {
           );
         }
       },
-      plugins: ["interaction", "dayGrid"],
+      plugins: ["interaction", "timeGrid"],
 
-      //, "timeGrid"
+      //, "" dayGrid
 
       longPressDelay: 250,
 
-      defaultView: "dayGridDay",
+      defaultView: "timeGridDay",
 
       //"timeGridDay"
 
