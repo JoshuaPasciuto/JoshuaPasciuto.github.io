@@ -698,7 +698,7 @@ setTimeout(function () {
       }, 15);
     };
   }, 1000);
-}, 100);
+}, 2000);
 
 setTimeout(function () {
   console.log("Number of calendars: " + $(".fc-view-container").length);
@@ -706,4 +706,4 @@ setTimeout(function () {
     $(".fc-view-container:nth-child(2)").remove();
     $(".fc-toolbar:nth-child(2)").remove();
   }
-}, 2500);
+}, 4500);
