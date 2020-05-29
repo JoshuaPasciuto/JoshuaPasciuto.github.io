@@ -49,10 +49,12 @@
 /* RIGHT column - Custom calendar */
 #calendar-container {
   border-radius: 2px;
+  height: 97%;
 }
 
 #calendar {
   background-color: none;
+  height: 97%;
 }
 
 .fc-scroller {
@@ -229,7 +231,8 @@ input {
   padding: 5px;
   border-radius: 15px;
   /*border: 2px solid #95A5A6;*/
-  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
+    0 0 16px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
 
@@ -297,14 +300,17 @@ input:focus {
 
 /** Structure */
 body {
+  font-family: lato;
+  background: url(https://rgsip1storage.blob.core.windows.net/imagecontainer/dev/images/1/e81813b8d50eec989adf029c599cf6ff.jpeg)
+    no-repeat center center fixed;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+#q_id {
   max-width: 80%;
   margin: 0 auto;
   padding: 0;
-  font-family: Lato;
-  font-weight: normal;
-  font-size: 14px;
-  background: url(https://rgsip1storage.blob.core.windows.net/imagecontainer/dev/images/1/e81813b8d50eec989adf029c599cf6ff.jpeg)
-    no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -439,6 +445,13 @@ h2 {
 }
 
 /*Loading animation*/
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
 .loader {
   text-align: center;
   display: flex 1 1 auto;
