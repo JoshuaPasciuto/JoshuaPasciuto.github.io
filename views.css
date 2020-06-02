@@ -1,12 +1,14 @@
 /** Button Styling */
 #submit,
 #submitCustomEvents {
-  padding: 10px 40px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
   font-family: Lato;
   font-weight: bold;
   font-size: 20px;
   border-radius: 20px;
-  border: 2px solid white;
+  border: 1px solid white;
   box-shadow: 0px 1px 2px 0px rgba(98, 95, 97, 0.5);
   color: white;
   background-image: linear-gradient(
@@ -35,7 +37,7 @@
 }
 
 .buttonHolder {
-  margin: 4% 0;
+  margin: 20px 0 10px 0;
   text-align: center;
 }
 
@@ -48,18 +50,10 @@
 /** Calendar */
 /* RIGHT column - Custom calendar */
 #calendar-container {
-  border-radius: 2px;
-  height: 97%;
 }
 
 #calendar {
   background-color: none;
-  height: 97%;
-}
-
-.fc-scroller {
-  max-height: 100%;
-  min-height: 100% !important;
 }
 
 table,
@@ -105,7 +99,7 @@ tr td:first-child {
   font-size: 14px;
   font-weight: 600;
   border-right: 1px solid rgb(189, 189, 189) !important;
-  /*background-color: #eee;*/
+  background-color: #fcf7f8;
 }
 
 td span {
@@ -114,7 +108,6 @@ td span {
 
 /* Calendar RIGHT column - Custom schedule */
 tr td:last-child {
-  border-bottom: 1px solid #eee !important;
   background-color: white;
 }
 
@@ -177,7 +170,6 @@ tr td:last-child {
 .hover_bkgr_fricc1,
 .hover_bkgr_fricc2,
 .hover_bkgr_fricc3 {
-  cursor: pointer;
   display: none;
   top: 0;
   z-index: 10000;
@@ -195,7 +187,7 @@ tr td:last-child {
   width: 60%;
   position: absolute;
   border-radius: 8px;
-  padding: 15px 5%;
+  padding: 15px;
 }
 
 .popupCloseButton {
@@ -226,100 +218,56 @@ tr td:last-child {
   top: 20%;
 }
 
-input {
-  margin: 0 0 10px 0;
-  padding: 5px;
-  border-radius: 15px;
-  /*border: 2px solid #95A5A6;*/
-  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1),
-    0 0 16px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.1);
-
-  background-color: rgba(255, 255, 255, 0.5);
-  transition: transform 0.25s, border-radius 0.25s;
+.inputGroup {
+  width: 90%;
+  margin: 15px auto;
+  padding: 40px 10px;
+  border: 1px solid #95a5a6;
+  border-radius: 8px;
+  background-color: #e2e3f3;
 }
 
-input:hover,
-input:focus {
-  transition: transform 0.25s, border-radius 0.25s;
-  border-radius: 5px;
-  transform: scale(1.2);
+input[type="text"] {
+  width: 70%;
+  margin: 4px auto;
+  padding: 8px;
+  font-family: Lato;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid #95a5a6;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+  border: 1px solid #00aeef;
 }
 
 /* Hides custom event form until the user submits schedule */
 .custom1,
-.custom2,
-.custom3 {
+.custom2 {
   display: none;
-}
-
-/** Grid */
-.grid-container {
-  display: grid;
-  grid-template-columns: 35% 65%;
-  grid-template-rows: auto;
-}
-
-.grid-item {
-  margin: 5px;
-}
-
-/** Scroll bars */
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE and Edge */
-.no-scroll {
-  -ms-overflow-style: none;
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-  border-radius: 10px;
 }
 
 /** Structure */
-body {
+body,
+#survey-container {
+  width: 80%;
+  margin: 0 auto;
   font-family: lato;
-  background: url(https://rgsip1storage.blob.core.windows.net/imagecontainer/dev/images/1/e81813b8d50eec989adf029c599cf6ff.jpeg)
-    no-repeat center center fixed;
   font-weight: normal;
   font-size: 14px;
-}
-
-#q_id {
-  max-width: 80%;
-  margin: 0 auto;
-  padding: 0;
+  background: url(https://rgsip1storage.blob.core.windows.net/imagecontainer/dev/images/1/e81813b8d50eec989adf029c599cf6ff.jpeg)
+    no-repeat center center;
   background-size: cover;
+  background-color: white;
 }
 
 header {
-  margin: 0 5px;
+  margin: 0 10px;
   text-align: center;
   color: black;
   background-color: white;
-  box-shadow: 0px 1px 2px 0px rgba(98, 95, 97, 1);
+  /*box-shadow: 0px 1px 2px 0px rgba(98, 95, 97, 1);*/
 }
 
 /* Text styling */
@@ -340,30 +288,26 @@ h2 {
   background-color: #eee;
 }
 
+h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
 /* Grid layout */
 .grid-container {
   display: grid;
   grid-template-columns: 35% 65%;
-  grid-template-rows: 60%;
+  grid-template-rows: auto;
   /*border: 1px dashed red;*/
 }
 
 .grid-item {
-  margin: 15px;
+  margin: 0 10px;
   /*border: 1px dashed blue;*/
 }
 .grid-item:first-child {
-  height: 97%;
-  overflow-y: scroll;
-}
-
-.grid-item:nth-child(2) {
-  height: 97%;
-  overflow-y: scroll;
-}
-
-.grid-item:last-child {
-  max-height: 5%;
+  height: 800px;
+  overflow-y: auto;
 }
 
 .event-grid {
@@ -376,24 +320,34 @@ h2 {
   padding: 0;
 }
 
-/* Tablet */
 @media only screen and (max-width: 940px) {
-  body {
-    max-width: 100%;
+  /* General structure styling */
+  body,
+  #survey-container {
+    width: 100%;
+  }
+
+  header {
+    margin: 0 5px;
+  }
+
+  h1 {
+    padding: 15px;
+    font-size: 20px;
   }
 
   .grid-container {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto;
-    padding: 0;
+  }
+
+  .grid-item {
+    margin: 0 5px;
   }
 
   .grid-item:first-child {
     height: auto;
-  }
-  .grid-item {
-    margin: 5px;
   }
 
   .event-grid {
@@ -426,18 +380,17 @@ h2 {
     transition: box-shadow 0.25s;
   }
 
-  /* General structure styling */
-  header {
-    margin: 0px;
+  input[type="text"] {
+    width: 100%;
   }
 
-  h1 {
-    padding: 15px;
-    font-size: 20px;
+  .hover_bkgr_fricc1 > div,
+  .hover_bkgr_fricc2 > div,
+  .hover_bkgr_fricc3 > div {
+    width: 80%;
   }
 }
 
-/* Mobile */
 @media only screen and (max-width: 640px) {
   tr td:first-child {
     width: 20% !important;
@@ -529,4 +482,43 @@ h2 {
 
 .ui-loader {
   display: none;
+}
+
+/** Scroll bars */
+/* Hide grid-item scrollbar for Chrome, Safari and Opera */
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide grid-item scrollbar for IE and Edge */
+.no-scroll {
+  -ms-overflow-style: none;
+}
+
+/* Custom scrollbar for event grid and calendar container */
+.fc-scroller::-webkit-scrollbar-track,
+.grid-item::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+.fc-scroller::-webkit-scrollbar,
+.grid-item::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f5f5f5;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb,
+.grid-item::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.44, rgb(122, 153, 217)),
+    color-stop(0.72, rgb(73, 125, 189)),
+    color-stop(0.86, rgb(28, 58, 148))
+  );
 }
