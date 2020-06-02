@@ -3,39 +3,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <title>Custom Scheduler</title>
+
+    <script>
+      $(document).ready(function () {
+        var head = document.getElementsByTagName("head")[0];
+        $("head").append(
+          '<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"/><link href="https://joshuapasciuto.github.io/views.css" rel="stylesheet" />'
+        );
+        var script1 = document.createElement("script");
+        script1.src = "https://joshuapasciuto.github.io/core/main.min.js";
+        var script2 = document.createElement("script");
+        script2.src = "https://joshuapasciuto.github.io/timegrid/main.min.js";
+        var script3 = document.createElement("script");
+        script3.src =
+          "https://joshuapasciuto.github.io/interaction/main.min.js";
+        var script4 = document.createElement("script");
+        script4.type = "text/javascript";
+        script4.src =
+          "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js";
+        var script5 = document.createElement("script");
+        script5.src =
+          "https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js";
+        var script6 = document.createElement("script");
+        script6.src = "https://joshuapasciuto.github.io/calendar.js";
+
+        $("head")
+          .append(script1)
+          .append(script2)
+          .append(script3)
+          .append(script4)
+          .append(script5)
+          .append(script6);
+      });
+    </script>
   </head>
-
-  <script>
-    $(document).ready(function () {
-      var head = document.getElementsByTagName("head")[0];
-      $("head").append(
-        '<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css" rel="stylesheet"/><link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet"/><link href="https://joshuapasciuto.github.io/views.css" rel="stylesheet" />'
-      );
-      var script1 = document.createElement("script");
-      script1.src = "https://joshuapasciuto.github.io/core/main.min.js";
-      var script2 = document.createElement("script");
-      script2.src = "https://joshuapasciuto.github.io/timegrid/main.min.js";
-      var script3 = document.createElement("script");
-      script3.src = "https://joshuapasciuto.github.io/interaction/main.min.js";
-      var script4 = document.createElement("script");
-      script4.type = "text/javascript";
-      script4.src =
-        "https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js";
-      var script5 = document.createElement("script");
-      script5.src =
-        "https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js";
-      var script6 = document.createElement("script");
-      script6.src = "https://joshuapasciuto.github.io/calendar.js";
-
-      $("head")
-        .append(script1)
-        .append(script2)
-        .append(script3)
-        .append(script4)
-        .append(script5)
-        .append(script6);
-    });
-  </script>
 
   <body>
     <div id="overlay" class="loader">
