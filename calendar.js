@@ -1,7 +1,7 @@
 setTimeout(function () {
   $(".loader").addClass("disabled");
   urlString = $("p").text();
-  console.log(urlString);
+  console.log(window.parent.location.href);
 }, 2600);
 
 setTimeout(function () {
