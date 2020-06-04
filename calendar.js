@@ -1,5 +1,7 @@
 setTimeout(function () {
   $(".loader").addClass("disabled");
+  urlString = $("p").text();
+  console.log(urlString);
 }, 2600);
 
 setTimeout(function () {
