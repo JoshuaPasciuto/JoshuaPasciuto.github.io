@@ -1,4 +1,3 @@
-document.domain = "journeylabs.io";
 setTimeout(function () {
   $(".loader").addClass("disabled");
   urlString = $("p").text();
