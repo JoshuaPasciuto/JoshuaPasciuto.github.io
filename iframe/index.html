@@ -1,0 +1,110 @@
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Custom Scheduler</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://joshuapasciuto.github.io/views.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/interaction/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script src="https://joshuapasciuto.github.io/calendar.js"></script>
+
+    <script></script>
+  </head>
+
+  <body>
+    <div id="overlay" class="loader">
+      <span class="center"></span>
+      <span class="center"></span>
+      <span class="center"></span>
+    </div>
+    <header>
+      <h1>Build Your Custom Schedule</h1>
+    </header>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <div id="external-events">
+          <div id="eventNames" class="event-grid">
+            <div id="div" class="fc-event external">Wake-Up Time</div>
+            <div id="div" class="fc-event external">Breakfast Time</div>
+            <div id="div" class="fc-event external">Online School 1</div>
+            <div id="div" class="fc-event external">Online School 2</div>
+            <div id="div" class="fc-event external">Online School 3</div>
+            <div id="div" class="fc-event external">Lunch Time</div>
+            <div id="div" class="fc-event external">Snack Time</div>
+            <div id="div" class="fc-event external">Exercise Time</div>
+            <div id="div" class="fc-event external">Chore Time</div>
+            <div id="div" class="fc-event external">Family Talk Time</div>
+            <div id="div" class="fc-event external">Dinner Time</div>
+            <div id="div" class="fc-event external">Open Time 1</div>
+            <div id="div" class="fc-event external">Open Time 2</div>
+            <div id="div" class="fc-event external">Bedtime</div>
+            <div id="div" class="fc-event external">Custom 1</div>
+            <div id="div" class="fc-event external">Custom 2</div>
+            <div id="div" class="fc-event external">Non E-Time</div>
+            <div id="div" class="fc-event external">E-Time</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item no-scroll">
+        <div id="calendar-container">
+          <div id="calendar"></div>
+
+          <div id="hover_bkgr_fricc" class="hover_bkgr_fricc1">
+            <span class="helper"></span>
+            <div id="customForm" class="custom1">
+              <div id="close" class="popupCloseButton">&times;</div>
+              <input
+                type="text"
+                id="eventTitle1"
+                name="title"
+                placeholder="Title"
+              /><br />
+              <input
+                type="text"
+                id="description1"
+                name="description"
+                placeholder="Description"
+              /><br />
+              <hr />
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="buttonHolder">
+          <button id="submit" type="button">Submit!</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
